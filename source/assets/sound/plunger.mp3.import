@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/plunger.mp3-abe5cb9f52b75d60f71e729772239085.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/plunger.mp3"
+dest_files=[ "res://.import/plunger.mp3-abe5cb9f52b75d60f71e729772239085.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

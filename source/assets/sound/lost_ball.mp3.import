@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lost_ball.mp3-3de74b62acf14bb13559a4dc498c83c4.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/lost_ball.mp3"
+dest_files=[ "res://.import/lost_ball.mp3-3de74b62acf14bb13559a4dc498c83c4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

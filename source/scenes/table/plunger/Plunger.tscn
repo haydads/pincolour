@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/table/plunger/Plunger.gd" type="Script" id=1]
+[ext_resource path="res://assets/sound/plunger.mp3" type="AudioStream" id=2]
+
+[node name="Plunger" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 64
+mode = 3
+contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2( -530, -660 )
+polygon = PoolVector2Array( 520, 660, 540, 660, 550, 670, 550, 790, 510, 790, 510, 670 )
+
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
+unique_name_in_owner = true
+polygon = PoolVector2Array( -10, 130, 10, 130, 10, 0, -10, 0 )
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 2 )

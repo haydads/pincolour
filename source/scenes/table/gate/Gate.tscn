@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 5 )
+
+[node name="Gate" type="RigidBody2D"]
+collision_layer = 32
+mode = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+polygon = PoolVector2Array( -10, 0, -10, 5, 10, 5, 10, 0 )

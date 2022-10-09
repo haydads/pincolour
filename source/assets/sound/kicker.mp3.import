@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kicker.mp3-7cc29bb86299ed72b0453e92476a46a3.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/kicker.mp3"
+dest_files=[ "res://.import/kicker.mp3-7cc29bb86299ed72b0453e92476a46a3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,929 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://resources/themes/default.tres" type="Theme" id=1]
+[ext_resource path="res://resources/font/menu.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/font/scoreboard.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/PNGs/how_to_play/Controls1.png" type="Texture" id=4]
+[ext_resource path="res://resources/font/default.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/PNGs/how_to_play/Controls2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/table/flipper/Flipper.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/table/kicker/Kicker.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/table/bumper/Bumper.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/table/gate/Gate.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/PNGs/timer/background.png" type="Texture" id=11]
+[ext_resource path="res://assets/PNGs/timer/highlight.png" type="Texture" id=12]
+[ext_resource path="res://scenes/table/target/DropTarget.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/how_to_play/HowToPlay.gd" type="Script" id=14]
+[ext_resource path="res://scenes/table/stopper/Stopper.tscn" type="PackedScene" id=15]
+
+[sub_resource type="InputEventAction" id=1]
+action = "ui_left"
+pressed = true
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="InputEventAction" id=3]
+action = "ui_right"
+pressed = true
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[node name="HowToPlay" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 14 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Colour" type="Node2D" parent="Background"]
+unique_name_in_owner = true
+
+[node name="DropTarget" parent="Background/Colour" instance=ExtResource( 13 )]
+position = Vector2( 100, 80 )
+
+[node name="DropTarget2" parent="Background/Colour" instance=ExtResource( 13 )]
+position = Vector2( 800, 600 )
+rotation = 2.35619
+scale = Vector2( 1, 1 )
+
+[node name="Bumper" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 300, 40 )
+
+[node name="Bumper2" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 380, 80 )
+
+[node name="Bumper3" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 380, 0 )
+
+[node name="Bumper4" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 40, 400 )
+
+[node name="Bumper8" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 100, 340 )
+
+[node name="Bumper9" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 100, 460 )
+
+[node name="Bumper5" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 680, 680 )
+
+[node name="Bumper6" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 720, 760 )
+
+[node name="Bumper7" parent="Background/Colour" instance=ExtResource( 9 )]
+position = Vector2( 760, 680 )
+
+[node name="Kicker" parent="Background/Colour" instance=ExtResource( 8 )]
+position = Vector2( 50, 290 )
+rotation = 0.785398
+scale = Vector2( 1, 1 )
+
+[node name="Kicker3" parent="Background/Colour" instance=ExtResource( 8 )]
+position = Vector2( 9.99998, 490 )
+rotation = 2.35619
+scale = Vector2( 1, 1 )
+
+[node name="Kicker2" parent="Background/Colour" instance=ExtResource( 8 )]
+position = Vector2( 800, 300 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Background"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 100, 0, 100, 40, 100, 55, 95, 55, 90, 60, 90, 100, 95, 105, 100, 105, 100, 160, 100, 240, 0, 340, 0, 0 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="Background"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 0, 580, 0, 480, 60, 540, 60, 560, 40, 580, 40, 620, 140, 720, 100, 760, 40, 760, 0, 800 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="Background"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 760, 0, 720, 0, 760, 40, 760, 100, 740, 120, 720, 140, 740, 160, 780, 160, 780, 200, 800, 220, 800, 380, 780, 400, 780, 560, 780, 580, 790, 580, 820, 610, 820, 620, 820, 680, 800, 780, 720, 820, 640, 780, 580, 840, 620, 840, 840, 840, 840, 660, 840, 0 )
+
+[node name="Node2D2" type="Node2D" parent="Background"]
+
+[node name="Flipper" parent="Background/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 120, 720 )
+rotation = 0.785398
+scale = Vector2( 1, 1 )
+script = null
+
+[node name="Flipper2" parent="Background/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 740, 140 )
+rotation = 2.35619
+scale = Vector2( 1, 1 )
+script = null
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_right = 840.0
+margin_bottom = 840.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+margin_left = 204.0
+margin_top = 281.0
+margin_right = 636.0
+margin_bottom = 558.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_right = 432.0
+margin_bottom = 277.0
+theme = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer"]
+margin_right = 432.0
+margin_bottom = 277.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 416.0
+margin_bottom = 261.0
+custom_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 3 )
+text = "HOW TO PLAY"
+align = 1
+valign = 1
+
+[node name="Pages" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 197.0
+rect_min_size = Vector2( 400, 0 )
+
+[node name="1" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+margin_right = 400.0
+margin_bottom = 157.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/1"]
+margin_right = 400.0
+margin_bottom = 157.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/1/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 5 )
+text = "INTRODUCTION"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/1/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 157.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "<Name of Game> is a pinball game with a twist!
+
+Every 10 seconds a modifier is applied which will change how the table works.
+
+(USE ARROW KEYS TO NAVIGATE)"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="2" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 484.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/2"]
+margin_right = 400.0
+margin_bottom = 484.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/2/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 5 )
+text = "Controls"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/2/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "only the arrow keys are required to play
+"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/2/VBoxContainer"]
+margin_top = 90.0
+margin_right = 400.0
+margin_bottom = 218.0
+texture = ExtResource( 4 )
+stretch_mode = 6
+
+[node name="Description3" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/2/VBoxContainer"]
+margin_top = 226.0
+margin_right = 400.0
+margin_bottom = 298.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+The left and right arrow keys are used to control the flippers
+"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/2/VBoxContainer"]
+margin_top = 306.0
+margin_right = 400.0
+margin_bottom = 434.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="Description2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/2/VBoxContainer"]
+margin_top = 442.0
+margin_right = 400.0
+margin_bottom = 484.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+Holding the down arrow key controls the plunger"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="3" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 405.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3"]
+margin_right = 400.0
+margin_bottom = 405.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 5 )
+text = "TimeR & Multiplier"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Control" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 240, 240 )
+
+[node name="Timer" type="Control" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3/VBoxContainer/Control"]
+margin_left = 200.0
+margin_top = 120.0
+margin_right = 200.0
+margin_bottom = 120.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3/VBoxContainer/Control/Timer"]
+modulate = Color( 0.784314, 0.784314, 0.803922, 1 )
+margin_left = -120.0
+margin_top = -120.0
+margin_right = 120.0
+margin_bottom = 120.0
+texture = ExtResource( 11 )
+
+[node name="TextureProgress" type="TextureProgress" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3/VBoxContainer/Control/Timer"]
+modulate = Color( 1, 0.701961, 0, 1 )
+margin_left = -120.0
+margin_top = -120.0
+margin_right = 120.0
+margin_bottom = 120.0
+max_value = 1000.0
+value = 690.0
+rounded = true
+texture_progress = ExtResource( 12 )
+fill_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3/VBoxContainer/Control/Timer"]
+margin_left = -80.0
+margin_top = -80.0
+margin_right = 80.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 3 )
+text = "2.5x"
+align = 1
+valign = 1
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/3/VBoxContainer"]
+margin_top = 288.0
+margin_right = 400.0
+margin_bottom = 405.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+The timer (Circle) compeltes every 10 seconds, which changes the modifier used on the table.
+
+the multiplier determines how many points you will get from hitting objects on the table."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="4" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 202.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/4"]
+margin_right = 400.0
+margin_bottom = 202.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/4/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 5 )
+text = "Flippers"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/4/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+
+
+Controlled using the Left and right arrow keys, the flippers help guide the ball where to go. "
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Flipper" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/4" instance=ExtResource( 7 )]
+position = Vector2( 105, 78 )
+rotation = 0.523599
+script = null
+
+[node name="Flipper2" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/4" instance=ExtResource( 7 )]
+position = Vector2( 290, 78 )
+rotation = 2.61799
+script = null
+
+[node name="5" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_top = 161.0
+margin_right = 400.0
+margin_bottom = 363.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/5"]
+margin_right = 400.0
+margin_bottom = 202.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/5/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 5 )
+text = "BUMPERS & KICKERS"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/5/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+
+
+
+BUMPERS & KICKERS forcefully push the ball away. hitting these will increase your score!"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Bumper" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/5" instance=ExtResource( 9 )]
+position = Vector2( 65, 60 )
+
+[node name="Bumper2" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/5" instance=ExtResource( 9 )]
+position = Vector2( 85, 115 )
+
+[node name="Bumper3" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/5" instance=ExtResource( 9 )]
+position = Vector2( 125, 65 )
+
+[node name="Kicker" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/5" instance=ExtResource( 8 )]
+position = Vector2( 285, 85 )
+rotation = 0.785398
+
+[node name="6" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_top = 161.0
+margin_right = 400.0
+margin_bottom = 318.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/6"]
+margin_right = 400.0
+margin_bottom = 157.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/6/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 5 )
+text = "Drop targets"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/6/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 157.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+Hitting all three targets will increase your multiplier and upgrade bumpers and kickers"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/6/VBoxContainer"]
+
+[node name="DropTarget" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/6/VBoxContainer/Node2D" instance=ExtResource( 13 )]
+modulate = Color( 0, 1, 0.0392157, 1 )
+position = Vector2( 195, 68 )
+rotation = 0.785398
+script = null
+
+[node name="Polygon2D" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/6/VBoxContainer/Node2D"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 175, 88, 175, 78, 205, 48, 215, 48, 225, 38, 215, 28, 155, 88, 165, 98 )
+
+[node name="7" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_top = 161.0
+margin_right = 400.0
+margin_bottom = 348.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/7"]
+margin_right = 400.0
+margin_bottom = 187.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/7/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 5 )
+text = "GATES"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/7/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 187.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+
+
+Gates allow the Ball to go through, but only in one direction"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/7"]
+
+[node name="Gate" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/7/Node2D" instance=ExtResource( 10 )]
+position = Vector2( 200, 83 )
+rotation = 4.36332
+scale = Vector2( 3, 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/7/Node2D"]
+position = Vector2( -25, 3 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 230, 103, 330, 63, 330, 118, 125, 118, 125, 103, 230, 103 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/7/Node2D"]
+position = Vector2( -20, 3 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 210, 53, 270, 28, 125, 28, 125, 53 )
+
+[node name="8" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 97.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/8"]
+margin_right = 400.0
+margin_bottom = 97.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/8/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Yellow Modifier"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/8/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "The yellow modifier doesn't change the table, instead it doubles the points for 10 seconds"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="9" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 112.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/9"]
+margin_right = 400.0
+margin_bottom = 112.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/9/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_colors/font_color = Color( 1, 0.784314, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "ORANGE Modifier"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/9/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "the orange modifier changes the ball to be very bouncy. this can be good for collecting points from bumpers and kickers."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="10" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 172.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/10"]
+margin_right = 400.0
+margin_bottom = 172.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/10/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_colors/font_color = Color( 1, 0.0862745, 0.0862745, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Red Modifier"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/10/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+
+both flippers are activated using either (Left or Right) Arrow keys"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Flipper" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/10" instance=ExtResource( 7 )]
+position = Vector2( 120, 70 )
+rotation = 0.523599
+script = null
+
+[node name="Flipper2" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/10" instance=ExtResource( 7 )]
+position = Vector2( 280, 70 )
+rotation = 2.61799
+script = null
+
+[node name="11" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 202.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/11"]
+margin_right = 400.0
+margin_bottom = 202.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/11/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_colors/font_color = Color( 0, 1, 0.0392157, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Green MOdifier"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/11/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 202.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+
+
+The green modifier opens a gate. if a ball goes in a multiball is activated. Arrows will appear to guide"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/11"]
+
+[node name="Polygon2D" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/11/Node2D"]
+color = Color( 0, 1, 0.156863, 1 )
+polygon = PoolVector2Array( 160, 128, 170, 128, 170, 103, 175, 103, 165, 88, 155, 103, 160, 103 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/11/Node2D"]
+position = Vector2( 50, 3 )
+color = Color( 0, 1, 0.156863, 1 )
+polygon = PoolVector2Array( 160, 125, 170, 125, 170, 100, 175, 100, 165, 85, 155, 100, 160, 100 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/11/Node2D"]
+position = Vector2( 0, -2 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 120, 90, 145, 90, 145, 55, 235, 55, 235, 90, 260, 90, 260, 35, 120, 35 )
+
+[node name="12" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 172.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/12"]
+margin_right = 400.0
+margin_bottom = 172.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/12/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_colors/font_color = Color( 0, 0.494118, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Blue Modifier"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/12/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+
+A stopper will appear blocking the ball from passing the flippers when down"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Flipper" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/12" instance=ExtResource( 7 )]
+position = Vector2( 115, 60 )
+rotation = 0.523599
+script = null
+
+[node name="Stopper" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/12" instance=ExtResource( 15 )]
+modulate = Color( 0, 0.490196, 1, 1 )
+position = Vector2( 200, 105 )
+
+[node name="Flipper2" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/12" instance=ExtResource( 7 )]
+position = Vector2( 285, 60 )
+rotation = 2.61799
+script = null
+
+[node name="13" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 127.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/13"]
+margin_right = 400.0
+margin_bottom = 127.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/13/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_colors/font_color = Color( 1, 0, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "MAGENTA MODIFIER"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/13/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 127.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "The magenta modifier activates slow motion. the table will move super slow
+
+(Be careful when speed returns to normal)"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="14" type="PanelContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages"]
+visible = false
+margin_right = 400.0
+margin_bottom = 217.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/14"]
+margin_right = 400.0
+margin_bottom = 217.0
+custom_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/14/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_colors/font_color = Color( 0, 1, 1, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "CYAN MODIFIER"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Description" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/14/VBoxContainer"]
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 217.0
+rect_min_size = Vector2( 32, 32 )
+custom_fonts/font = ExtResource( 2 )
+text = "
+
+
+
+
+
+
+Similar to The green modifier, CYAN also opens a gate. if a ball goes in a you gain an extra ball. Arrows will appear to guide"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/14"]
+
+[node name="Polygon2D" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/14/Node2D"]
+color = Color( 0, 1, 1, 1 )
+polygon = PoolVector2Array( 160, 128, 170, 128, 170, 103, 175, 103, 165, 88, 155, 103, 160, 103 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/14/Node2D"]
+position = Vector2( 50, 3 )
+color = Color( 0, 1, 1, 1 )
+polygon = PoolVector2Array( 160, 125, 170, 125, 170, 100, 175, 100, 165, 85, 155, 100, 160, 100 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Pages/14/Node2D"]
+position = Vector2( 0, -2 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 120, 90, 145, 90, 145, 55, 235, 55, 235, 90, 260, 90, 260, 35, 120, 35 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 213.0
+margin_right = 400.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 32, 32 )
+alignment = 1
+
+[node name="Previous" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 166.0
+margin_right = 198.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+shortcut = SubResource( 2 )
+text = "<"
+
+[node name="Next" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 202.0
+margin_right = 234.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+shortcut = SubResource( 4 )
+text = ">"
+
+[node name="MainMenu" type="Button" parent="."]
+unique_name_in_owner = true
+margin_left = 360.0
+margin_top = 780.0
+margin_right = 484.0
+margin_bottom = 812.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "MAIN MENU"

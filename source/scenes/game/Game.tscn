@@ -1,0 +1,403 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://scenes/table/flipper/Flipper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sound/background.mp3" type="AudioStream" id=2]
+[ext_resource path="res://scenes/table/plunger/Plunger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/table/kicker/Kicker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/table/gate/Gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/table/bumper/Bumper.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/table/target/DropTarget.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/scoreboard/Scoreboard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/game/Game.gd" type="Script" id=9]
+[ext_resource path="res://scenes/timer/Timer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/table/pins/Pin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/table/light/Light.tscn" type="PackedScene" id=12]
+[ext_resource path="res://resources/themes/default.tres" type="Theme" id=13]
+[ext_resource path="res://scenes/table/bonus/Bonus.tscn" type="PackedScene" id=14]
+[ext_resource path="res://resources/font/menu.tres" type="DynamicFont" id=15]
+[ext_resource path="res://resources/font/scoreboard.tres" type="DynamicFont" id=16]
+[ext_resource path="res://scenes/table/light/LightGroup.gd" type="Script" id=17]
+[ext_resource path="res://assets/sound/lost_ball.mp3" type="AudioStream" id=18]
+
+[node name="Game" type="Node"]
+script = ExtResource( 9 )
+
+[node name="Timer" parent="." instance=ExtResource( 10 )]
+margin_left = 420.0
+margin_top = 500.0
+margin_right = 460.0
+margin_bottom = 540.0
+
+[node name="Table" type="Node2D" parent="."]
+
+[node name="Plunger" parent="Table" instance=ExtResource( 3 )]
+position = Vector2( 810, 690 )
+full_extension = 80
+
+[node name="Kickers" type="Node2D" parent="Table"]
+
+[node name="Kicker" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 270, 650 )
+rotation = 2.35619
+
+[node name="Kicker2" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 570, 650 )
+rotation = 0.785398
+
+[node name="Kicker7" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 20, 440 )
+
+[node name="Kicker9" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 180, 450 )
+
+[node name="Kicker11" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 660, 210 )
+
+[node name="Kicker4" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 230, 145 )
+rotation = 2.35619
+
+[node name="Kicker10" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 20, 205 )
+
+[node name="Kicker5" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 125, 100 )
+rotation = 1.5708
+
+[node name="Kicker6" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 575, 140 )
+rotation = 1.5708
+
+[node name="Kicker8" parent="Table/Kickers" instance=ExtResource( 4 )]
+position = Vector2( 625, 135 )
+rotation = 2.35619
+
+[node name="Gates" type="Node2D" parent="Table"]
+
+[node name="Gate2" parent="Table/Gates" instance=ExtResource( 5 )]
+position = Vector2( 750, 130 )
+rotation = 3.92699
+scale = Vector2( 2, 1 )
+
+[node name="Gate9" parent="Table/Gates" instance=ExtResource( 5 )]
+position = Vector2( 790, 110 )
+rotation = 5.49779
+scale = Vector2( 2, 1 )
+
+[node name="BonusGate" parent="Table/Gates" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+position = Vector2( 420, 105 )
+rotation = 3.14159
+scale = Vector2( 5, 1 )
+
+[node name="Gate5" parent="Table/Gates" instance=ExtResource( 5 )]
+position = Vector2( 780, 100 )
+rotation = 3.14159
+scale = Vector2( 2, 1 )
+
+[node name="Gate3" parent="Table/Gates" instance=ExtResource( 5 )]
+position = Vector2( 780, 460 )
+rotation = 4.71239
+scale = Vector2( 2, 1 )
+
+[node name="Gate6" parent="Table/Gates" instance=ExtResource( 5 )]
+position = Vector2( 680, 615 )
+rotation = 1.5708
+scale = Vector2( 2, 1 )
+
+[node name="Gate7" parent="Table/Gates" instance=ExtResource( 5 )]
+position = Vector2( 180, 620 )
+rotation = 1.5708
+scale = Vector2( 2, 1 )
+
+[node name="Gate4" parent="Table/Gates" instance=ExtResource( 5 )]
+position = Vector2( 810, 455 )
+rotation = 5.84685
+scale = Vector2( 2, 1 )
+
+[node name="Walls" type="Node2D" parent="Table"]
+
+[node name="Collisions" type="RigidBody2D" parent="Table/Walls"]
+collision_layer = 2
+mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/Walls/Collisions"]
+position = Vector2( 20, 40 )
+polygon = PoolVector2Array( -20, 800, -20, 40, 20, 40, 330, 40, 330, -10, 370, -10, 470, -10, 470, 40, 545, 40, 730, 40, 730, -10, 790, -10, 790, 40, 820, 40, 820, 800, 560, 800, 560, 760, 740, 640, 740, 470, 730, 450, 760, 430, 780, 420, 780, 780, 800, 780, 800, 80.6162, 780.604, 60, 780, 0, 740, 0, 740, 60, 675, 125, 675, 205, 645, 235, 640, 235, 640, 130, 610, 100, 515, 100, 485, 100, 455, 70, 440, 70, 435, 65, 435, 10, 365, 10, 365, 65, 360, 70, 345, 70, 340, 70, 325, 85, 315, 85, 285, 115, 285, 125, 255, 155, 250, 155, 245, 150, 250, 145, 165, 60, 30, 60, 0, 85, 0, 150, 0, 240, 20, 260, 20, 350, 0, 360, 0, 460, 70, 500, 70.2803, 540.187, 160, 600, 320, 720, 310, 740, 260, 740, 240, 760, 240, 800 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Table/Walls/Collisions"]
+position = Vector2( 20, 40 )
+polygon = PoolVector2Array( 480, 720, 560, 660, 640, 600, 640, 600, 660, 585, 660, 620, 660, 660, 540, 740, 490, 740 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Table/Walls/Collisions"]
+position = Vector2( 20, 40 )
+polygon = PoolVector2Array( 180, 580, 180, 530, 200, 510, 200, 560, 300, 660, 300, 670, 260, 640, 220, 610 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Table/Walls/Collisions"]
+position = Vector2( 20, 40 )
+polygon = PoolVector2Array( 620, 580, 620, 550, 600, 530, 600, 560, 500, 660, 500, 670, 540, 640, 580, 610 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Table/Walls/Collisions"]
+polygon = PoolVector2Array( 800, 140, 780, 120, 760, 140, 785, 165, 785, 285, 780, 290, 780, 330, 790, 340, 790, 380, 780, 390, 780, 450, 800, 440 )
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Table/Walls/Collisions"]
+polygon = PoolVector2Array( 660, 615, 680, 600, 680, 540, 660, 560 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Table/Walls/Collisions"]
+position = Vector2( -50, -60 )
+polygon = PoolVector2Array( 230, 550, 160, 600, 160, 620, 230, 670, 230, 630, 230, 610, 260, 580, 260, 525, 250, 515, 250, 475, 260, 465, 260, 430, 210, 380, 210, 450, 230, 460 )
+
+[node name="Shape" type="Node2D" parent="Table/Walls"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Table/Walls/Shape"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 260, 840, 260, 800, 280, 780, 330, 780, 340, 760, 180, 640, 90, 580, 90, 540, 20, 500, 20, 400, 40, 390, 40, 350, 40, 320, 40, 285, 25, 270, 25, 265, 20, 265, 20, 145, 25, 145, 25, 140, 20, 135, 20, 130, 50, 100, 55, 100, 60, 105, 65, 105, 65, 100, 185, 100, 270, 185, 265, 190, 270, 195, 275, 195, 305, 165, 305, 155, 335, 125, 345, 125, 360, 110, 365, 110, 380, 110, 385, 105, 385, 50, 455, 50, 455, 105, 460, 110, 475, 110, 505, 140, 630, 140, 660, 170, 660, 275, 665, 275, 695, 245, 695, 230, 695, 165, 760, 100, 760, 40, 800, 40, 800, 100, 820, 120, 820, 820, 800, 820, 800, 460, 780, 470, 750, 490, 760, 510, 760, 680, 580, 800, 580, 840, 840, 840, 840, 80, 810, 80, 810, 30, 750, 30, 750, 80, 490, 80, 490, 30, 490, 30, 350, 30, 350, 80, 0, 80, 0, 840 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="Table/Walls/Shape"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 780, 450, 800, 440, 800, 140, 780, 120, 760, 140, 785, 165, 785, 285, 780, 290, 780, 330, 790, 340, 790, 350, 790, 380, 780, 390 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="Table/Walls/Shape"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 500, 760, 510, 780, 560, 780, 680, 700, 680, 625 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="Table/Walls/Shape"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 180, 610, 180, 550, 210, 520, 210, 465, 200, 455, 200, 415, 210, 410, 210, 400, 210, 370, 160, 320, 160, 390, 180, 400, 180, 490, 110, 540, 110, 560 )
+
+[node name="Polygon2D6" type="Polygon2D" parent="Table/Walls/Shape"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 660, 615, 680, 600, 680, 540, 660, 560 )
+
+[node name="Polygon2D7" type="Polygon2D" parent="Table/Walls/Shape"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 620, 570, 620, 600, 520, 700, 520, 710, 640, 620, 640, 590 )
+
+[node name="Polygon2D8" type="Polygon2D" parent="Table/Walls/Shape"]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 320, 710, 320, 700, 220, 600, 220, 550, 200, 570, 200, 620 )
+
+[node name="Flippers" type="Node2D" parent="Table"]
+
+[node name="Flipper" parent="Table/Flippers" instance=ExtResource( 1 )]
+position = Vector2( 335, 770 )
+rotation = 0.523599
+
+[node name="Flipper3" parent="Table/Flippers" instance=ExtResource( 1 )]
+position = Vector2( 505, 770 )
+rotation = 2.61799
+keycode = "ui_right"
+
+[node name="Flipper4" parent="Table/Flippers" instance=ExtResource( 1 )]
+position = Vector2( 755, 500 )
+rotation = 2.61799
+keycode = "ui_right"
+
+[node name="Bumpers" type="Node2D" parent="Table"]
+
+[node name="Node2D" type="Node2D" parent="Table/Bumpers"]
+
+[node name="Bumper" parent="Table/Bumpers/Node2D" instance=ExtResource( 6 )]
+position = Vector2( 100, 490 )
+score = 250
+
+[node name="Bumper3" parent="Table/Bumpers/Node2D" instance=ExtResource( 6 )]
+position = Vector2( 70, 440 )
+score = 250
+
+[node name="Bumper4" parent="Table/Bumpers/Node2D" instance=ExtResource( 6 )]
+position = Vector2( 130, 440 )
+score = 250
+
+[node name="Bumper5" parent="Table/Bumpers" instance=ExtResource( 6 )]
+position = Vector2( 740, 180 )
+
+[node name="Node2D2" type="Node2D" parent="Table/Bumpers"]
+
+[node name="Bumper7" parent="Table/Bumpers/Node2D2" instance=ExtResource( 6 )]
+position = Vector2( 600, 260 )
+
+[node name="Bumper8" parent="Table/Bumpers/Node2D2" instance=ExtResource( 6 )]
+position = Vector2( 540, 200 )
+
+[node name="Bumper9" parent="Table/Bumpers/Node2D2" instance=ExtResource( 6 )]
+position = Vector2( 600, 200 )
+
+[node name="Node2D3" type="Node2D" parent="Table/Bumpers"]
+
+[node name="Bumper10" parent="Table/Bumpers/Node2D3" instance=ExtResource( 6 )]
+position = Vector2( 75, 155 )
+
+[node name="Bumper11" parent="Table/Bumpers/Node2D3" instance=ExtResource( 6 )]
+position = Vector2( 145, 155 )
+
+[node name="Bumper12" parent="Table/Bumpers/Node2D3" instance=ExtResource( 6 )]
+position = Vector2( 75, 225 )
+
+[node name="Targets" type="Node2D" parent="Table"]
+
+[node name="DropTarget2" parent="Table/Targets" instance=ExtResource( 7 )]
+position = Vector2( 40, 120 )
+rotation = 0.785398
+
+[node name="DropTarget3" parent="Table/Targets" instance=ExtResource( 7 )]
+position = Vector2( 780, 360 )
+rotation = 3.14159
+
+[node name="DropTarget5" parent="Table/Targets" instance=ExtResource( 7 )]
+position = Vector2( 325, 145 )
+rotation = 0.785398
+
+[node name="DropTarget4" parent="Table/Targets" instance=ExtResource( 7 )]
+position = Vector2( 210, 435 )
+
+[node name="Boundary" type="Area2D" parent="Table"]
+unique_name_in_owner = true
+collision_layer = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/Boundary"]
+polygon = PoolVector2Array( 0, 840, 260.142, 840, 300, 880, 540, 880, 580, 840, 840, 840, 840, 860, 920, 920, -60, 920, -60, -80, 920, -80, 920, 920, 840, 860, 840, 840, 840, 80, 810, 80, 810, 30, 750, 30, 750, 80, 565, 80, 490, 80, 490, 30, 350, 30, 350, 80, 0, 80 )
+
+[node name="Light" type="Node2D" parent="Table"]
+
+[node name="LightGroup1" type="Node2D" parent="Table/Light"]
+script = ExtResource( 17 )
+multiplier = 2.0
+
+[node name="0" parent="Table/Light/LightGroup1" instance=ExtResource( 12 )]
+position = Vector2( 55, 375 )
+
+[node name="1" parent="Table/Light/LightGroup1" instance=ExtResource( 12 )]
+position = Vector2( 85, 375 )
+
+[node name="2" parent="Table/Light/LightGroup1" instance=ExtResource( 12 )]
+position = Vector2( 115, 375 )
+
+[node name="3" parent="Table/Light/LightGroup1" instance=ExtResource( 12 )]
+position = Vector2( 145, 375 )
+
+[node name="LightGroup2" type="Node2D" parent="Table/Light"]
+script = ExtResource( 17 )
+
+[node name="0" parent="Table/Light/LightGroup2" instance=ExtResource( 12 )]
+position = Vector2( 710, 230 )
+
+[node name="1" parent="Table/Light/LightGroup2" instance=ExtResource( 12 )]
+position = Vector2( 740, 230 )
+
+[node name="2" parent="Table/Light/LightGroup2" instance=ExtResource( 12 )]
+position = Vector2( 770, 230 )
+
+[node name="Balls" type="Node2D" parent="Table"]
+unique_name_in_owner = true
+
+[node name="Pins" type="Node2D" parent="Table"]
+
+[node name="Pin" parent="Table/Pins" instance=ExtResource( 11 )]
+position = Vector2( 725, 230 )
+
+[node name="Pin4" parent="Table/Pins" instance=ExtResource( 11 )]
+position = Vector2( 130, 375 )
+
+[node name="Pin6" parent="Table/Pins" instance=ExtResource( 11 )]
+position = Vector2( 70, 375 )
+
+[node name="Pin5" parent="Table/Pins" instance=ExtResource( 11 )]
+position = Vector2( 100, 375 )
+
+[node name="Pin3" parent="Table/Pins" instance=ExtResource( 11 )]
+position = Vector2( 755, 230 )
+
+[node name="Stoppers" type="Node2D" parent="Table"]
+unique_name_in_owner = true
+
+[node name="Bonus" parent="Table" instance=ExtResource( 14 )]
+position = Vector2( 420, 65 )
+collision_layer = 256
+
+[node name="Scoreboard" parent="." instance=ExtResource( 8 )]
+unique_name_in_owner = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
+autoplay = true
+
+[node name="LostBall" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 18 )
+
+[node name="GameOver" type="Popup" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+
+[node name="CenterContainer" type="CenterContainer" parent="GameOver/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="GameOver/ColorRect/CenterContainer"]
+margin_left = 420.0
+margin_top = 420.0
+margin_right = 420.0
+margin_bottom = 420.0
+theme = ExtResource( 13 )
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOver/ColorRect/CenterContainer/PanelContainer"]
+margin_right = 264.0
+margin_bottom = 183.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 248.0
+margin_bottom = 167.0
+custom_constants/separation = 16
+
+[node name="Title" type="Label" parent="GameOver/ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 232.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 16 )
+text = "GAME OVER"
+
+[node name="Description" type="Label" parent="GameOver/ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 40.0
+margin_right = 232.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 15 )
+text = "Description"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 83.0
+margin_right = 232.0
+margin_bottom = 151.0
+
+[node name="Retry" type="Button" parent="GameOver/ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" groups=["Actions"]]
+margin_right = 232.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 13 )
+custom_fonts/font = ExtResource( 15 )
+text = "RETRY"
+
+[node name="MainMenu" type="Button" parent="GameOver/ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" groups=["Actions"]]
+margin_top = 36.0
+margin_right = 232.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+theme = ExtResource( 13 )
+custom_fonts/font = ExtResource( 15 )
+text = "MAIN MENU"

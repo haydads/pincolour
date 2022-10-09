@@ -1,0 +1,79 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="ludum-dare-51"
+run/main_scene="res://scenes/menu/main/MainMenu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
+SceneManager="*res://scenes/managers/scene/SceneManager.tscn"
+
+[display]
+
+window/size/width=840
+window/size/height=840
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://resources/themes/default.tres"
+
+[input]
+
+left_flipper={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+right_flipper={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+both_flippers={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="ball"
+2d_physics/layer_2="wall"
+2d_physics/layer_3="flipper"
+2d_physics/layer_4="bumper"
+2d_physics/layer_5="kicker"
+2d_physics/layer_6="gate"
+2d_physics/layer_7="plunger"
+2d_physics/layer_8="target"
+2d_physics/layer_9="boundary"
+2d_physics/layer_10="targets"
+
+[physics]
+
+common/physics_fps=120
+common/enable_pause_aware_picking=true
+2d/default_gravity=1000
+common/physics_interpolation=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+environment/default_environment="res://default_env.tres"

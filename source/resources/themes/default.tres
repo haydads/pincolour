@@ -1,0 +1,67 @@
+[gd_resource type="Theme" load_steps=17 format=2]
+
+[ext_resource path="res://resources/styles/default/button_disabled.tres" type="StyleBox" id=1]
+[ext_resource path="res://resources/styles/default/button_normal.tres" type="StyleBox" id=2]
+[ext_resource path="res://resources/styles/default/button_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://resources/styles/default/panel.tres" type="StyleBox" id=4]
+[ext_resource path="res://resources/styles/default/line_edit.tres" type="StyleBox" id=5]
+[ext_resource path="res://resources/styles/default/navigation_panel.tres" type="StyleBox" id=8]
+[ext_resource path="res://resources/styles/scroll/normal_scroll.tres" type="StyleBox" id=9]
+[ext_resource path="res://resources/styles/scroll/highlight_scroll.tres" type="StyleBox" id=10]
+[ext_resource path="res://resources/styles/scroll/background_scroll.tres" type="StyleBox" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+content_margin_left = 8.0
+content_margin_right = 8.0
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="ImageTexture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[resource]
+Button/styles/disabled = ExtResource( 1 )
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 3 )
+Label/styles/normal = SubResource( 2 )
+LineEdit/styles/focus = SubResource( 3 )
+LineEdit/styles/normal = ExtResource( 5 )
+MenuButton/styles/disabled = ExtResource( 1 )
+MenuButton/styles/focus = SubResource( 6 )
+MenuButton/styles/hover = ExtResource( 3 )
+MenuButton/styles/normal = ExtResource( 2 )
+MenuButton/styles/pressed = ExtResource( 3 )
+OptionButton/icons/arrow = SubResource( 4 )
+OptionButton/styles/disabled = ExtResource( 1 )
+OptionButton/styles/focus = SubResource( 5 )
+OptionButton/styles/hover = ExtResource( 3 )
+OptionButton/styles/normal = ExtResource( 2 )
+OptionButton/styles/pressed = ExtResource( 3 )
+PanelContainer/styles/panel = ExtResource( 4 )
+PopupMenu/styles/hover = SubResource( 7 )
+PopupMenu/styles/panel = ExtResource( 8 )
+TooltipLabel/colors/font_color = Color( 1, 1, 1, 1 )
+TooltipLabel/fonts/font = null
+TooltipPanel/styles/panel = ExtResource( 2 )
+VScrollBar/styles/grabber = ExtResource( 9 )
+VScrollBar/styles/grabber_highlight = ExtResource( 10 )
+VScrollBar/styles/grabber_pressed = ExtResource( 9 )
+VScrollBar/styles/scroll = ExtResource( 11 )

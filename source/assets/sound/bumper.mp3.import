@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bumper.mp3-28513ee05ca14b47c90dc39c5def3339.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/bumper.mp3"
+dest_files=[ "res://.import/bumper.mp3-28513ee05ca14b47c90dc39c5def3339.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
